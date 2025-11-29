@@ -14,3 +14,20 @@
 PRICE = [0, 1, 2, 1, 3, 1, 2, 1, 3, 1, 2, 1, 3, 1, 2, 1] 
 
 # Решение будет здесь
+f = [0] + [100] * 15
+def schechic(x):
+
+    if x <= 11 and PRICE[x + 4] + f[x] < f[x + 4]:
+        f[x + 4] = PRICE[x + 4] + f[x]
+        schechic(x + 4)
+
+    if x <= 13 and PRICE[x + 2] + f[x] < f[x + 2]:
+        f[x + 2] = PRICE[x + 2] + f[x]
+        schechic(x + 2)
+
+    if x<= 14 and PRICE[x + 1] + f[x] < f[x + 1]:
+        f[x + 1] = PRICE[x + 1] + f[x]
+        schechic(x + 1)
+
+schechic(0)
+print(f[-1])
