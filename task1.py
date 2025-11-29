@@ -9,3 +9,15 @@
 """
 
 # Решение будет здесь
+import math
+o = 0
+d = 0
+c = 0
+n = 0
+for o in range(10):
+    for d in range(5):
+        for c in range(2):
+            if (o + d*2 + c*4 )== 10:
+                a = (math.factorial(o+d+c))/( math.factorial(o) * math.factorial(d) * math.factorial(c) )
+                n += a
+print(int(n))

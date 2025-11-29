@@ -16,3 +16,18 @@ GRID = [
 ]
 
 # Решение будет здесь
+
+for i in range(1,4):
+    GRID[0][i] += GRID[0][i-1]
+
+for j in range(1,4):
+    GRID[j][0] += GRID[j-1][0]
+
+for i in range(1,4):
+    for j in range(1,4):
+        if GRID[j][i-1] < GRID[j-1][i]:
+            GRID[i][j] += GRID[j][i-1]
+        else:
+            GRID[i][j] += GRID[j-1][i]
+
+print(GRID[3][3])
